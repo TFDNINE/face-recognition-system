@@ -11,3 +11,19 @@ C:\Users\lamka\Downloads\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.cs
 C:\Users\lamka\Downloads\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.csproj.CopyComplete
 C:\Users\lamka\Downloads\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.exe
 C:\Users\lamka\Downloads\FaceRecProOV\FaceRecProOV\obj\x86\Debug\MultiFaceRec.pdb
+C:\Users\Sitth\source\computer vision\Face-Detection\FaceRecProOV\bin\Debug\MultiFaceRec.exe.config
+C:\Users\Sitth\source\computer vision\Face-Detection\FaceRecProOV\bin\Debug\MultiFaceRec.exe
+C:\Users\Sitth\source\computer vision\Face-Detection\FaceRecProOV\bin\Debug\MultiFaceRec.pdb
+C:\Users\Sitth\source\computer vision\Face-Detection\FaceRecProOV\bin\Debug\Emgu.CV.xml
+C:\Users\Sitth\source\computer vision\Face-Detection\FaceRecProOV\bin\Debug\Emgu.CV.UI.xml
+C:\Users\Sitth\source\computer vision\Face-Detection\FaceRecProOV\bin\Debug\Emgu.Util.xml
+C:\Users\Sitth\source\computer vision\Face-Detection\FaceRecProOV\obj\x86\Debug\MultiFaceRec.csproj.AssemblyReference.cache
+C:\Users\Sitth\source\computer vision\Face-Detection\FaceRecProOV\obj\x86\Debug\MultiFaceRec.Properties.Resources.resources
+C:\Users\Sitth\source\computer vision\Face-Detection\FaceRecProOV\obj\x86\Debug\MultiFaceRec.csproj.GenerateResource.cache
+C:\Users\Sitth\source\computer vision\Face-Detection\FaceRecProOV\obj\x86\Debug\MultiFaceRec.csproj.CoreCompileInputs.cache
+C:\Users\Sitth\source\computer vision\Face-Detection\FaceRecProOV\obj\x86\Debug\MultiFaceRec.csproj.CopyComplete
+C:\Users\Sitth\source\computer vision\Face-Detection\FaceRecProOV\obj\x86\Debug\MultiFaceRec.exe
+C:\Users\Sitth\source\computer vision\Face-Detection\FaceRecProOV\obj\x86\Debug\MultiFaceRec.pdb
+C:\Users\Sitth\source\computer vision\Face-Detection\FaceRecProOV\obj\x86\Debug\MultiFaceRec.login.resources
+C:\Users\Sitth\source\computer vision\Face-Detection\FaceRecProOV\obj\x86\Debug\MultiFaceRec.MainForm.resources
+C:\Users\Sitth\source\computer vision\Face-Detection\FaceRecProOV\obj\x86\Debug\MultiFaceRec.Signup.resources
