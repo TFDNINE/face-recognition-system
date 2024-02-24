@@ -78,11 +78,7 @@ namespace MultiFaceRec
             Application.Idle += new EventHandler(FrameGrabber);
             button1.Enabled = false;
         }
-
-
- 
-
-
+        
         void FrameGrabber(object sender, EventArgs e)
         {
             label3.Text = "0";
@@ -138,8 +134,6 @@ namespace MultiFaceRec
 
                 //Set the number of faces detected on the scene
                 label3.Text = facesDetected[0].Length.ToString();
-
-
 
             }
             t = 0;
