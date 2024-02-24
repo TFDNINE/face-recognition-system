@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -9,9 +8,10 @@ using Emgu.CV.CvEnum;
 using System.IO;
 using System.Diagnostics;
 
+
 namespace MultiFaceRec
 {
-    public partial class MainForm : Form
+    public partial class Addface : Form
     {
         //Declararation of all variables, vectors and haarcascades
         Image<Bgr, Byte> currentFrame;
@@ -26,18 +26,7 @@ namespace MultiFaceRec
         List<string> NamePersons = new List<string>();
         int ContTrain, NumLabels, t;
         string name, names = null;
-
-        private void imageBoxFrameGrabber_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        public MainForm()
+        public Addface()
         {
             InitializeComponent();
             //Load haarcascades for face detection
@@ -63,11 +52,9 @@ namespace MultiFaceRec
             catch (Exception e)
             {
                 //MessageBox.Show(e.ToString());
-                MessageBox.Show("ບໍ່ພົບຫຍັງໃນຖານຂໍ້ມູນ, ກະລຸນາ ເພີ່ມໃບຫນ້າ.", "Triained faces load", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Nothing in binary database, please add face.", "Triained faces load", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -86,7 +73,7 @@ namespace MultiFaceRec
             {
                 if (string.IsNullOrEmpty(textBox1.Text))
                 {
-                    MessageBox.Show("ກະລຸນາປ້ອນຊື່ຂອງທ່ານກ່ອນເພີ່ມໃບຫນ້າ");
+                    MessageBox.Show("Please input your name to add face");
                 }
                 else
                 {
@@ -130,13 +117,12 @@ namespace MultiFaceRec
                         File.AppendAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels.txt", labels.ToArray()[i - 1] + "%");
                     }
 
-                    MessageBox.Show(textBox1.Text + " ຖືກເພີ່ມລົງໃນຖານຂໍ້ມູນສໍາເລັດແລ້ວ :)", "Training OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(textBox1.Text + "´s face detected and added :)", "Training OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch
             {
-                MessageBox.Show("ບໍ່ສາມາດກວດພົບໃບຫນ່າ. ກະລຸນາກວດເບິ່ງກ້ອງຂອງທ່ານ ຫຼື ຍັບເຂົ້າມາໃກ້ກ້ອງຕື່ມ.", "ການເທຣນຂໍ້ມູນເກີດຂໍ້ຜິດພາດ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
+                MessageBox.Show("No face detected. Please check your camera or stand closer.", "Training Fail", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -179,10 +165,9 @@ namespace MultiFaceRec
                     //Eigen face recognizer
                     EigenObjectRecognizer recognizer = new EigenObjectRecognizer(
                        trainingImages.ToArray(),
-                       labels.ToArray(),
+                    labels.ToArray(),
                        3000,
                        ref termCrit);
-
                     name = recognizer.Recognize(result);
 
                     //Draw the label for each face detected and recognized
@@ -215,5 +200,8 @@ namespace MultiFaceRec
             NamePersons.Clear();
         }
     }
-    
+
+}
+
+    }
 }
