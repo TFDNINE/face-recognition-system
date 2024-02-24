@@ -188,9 +188,9 @@
             this.label1.Location = new System.Drawing.Point(423, 92);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 24);
+            this.label1.Size = new System.Drawing.Size(116, 24);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Welcome back!";
+            this.label1.Text = "ຍິນດີຕອນຮັບ";
             // 
             // panel2
             // 
@@ -218,12 +218,12 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.LightGray;
-            this.label6.Location = new System.Drawing.Point(113, 217);
+            this.label6.Location = new System.Drawing.Point(41, 244);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(136, 29);
+            this.label6.Size = new System.Drawing.Size(313, 29);
             this.label6.TabIndex = 0;
-            this.label6.Text = "MarcoMan";
+            this.label6.Text = "Face Recognition System";
             // 
             // login
             // 

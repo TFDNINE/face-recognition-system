@@ -32,6 +32,11 @@ namespace MultiFaceRec
 
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
         public MainForm()
         {
             InitializeComponent();
@@ -58,7 +63,7 @@ namespace MultiFaceRec
             catch (Exception e)
             {
                 //MessageBox.Show(e.ToString());
-                MessageBox.Show("Nothing in binary database, please add face.", "Triained faces load", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("ບໍ່ພົບຫຍັງໃນຖານຂໍ້ມູນ, ກະລຸນາ ເພີ່ມໃບຫນ້າ.", "Triained faces load", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
         }
@@ -81,7 +86,7 @@ namespace MultiFaceRec
             {
                 if (string.IsNullOrEmpty(textBox1.Text))
                 {
-                    MessageBox.Show("Please input your name to add face");
+                    MessageBox.Show("ກະລຸນາປ້ອນຊື່ຂອງທ່ານກ່ອນເພີ່ມໃບຫນ້າ");
                 }
                 else
                 {
@@ -125,12 +130,13 @@ namespace MultiFaceRec
                         File.AppendAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels.txt", labels.ToArray()[i - 1] + "%");
                     }
 
-                    MessageBox.Show(textBox1.Text + "´s face detected and added :)", "Training OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(textBox1.Text + " ຖືກເພີ່ມລົງໃນຖານຂໍ້ມູນສໍາເລັດແລ້ວ :)", "Training OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch
             {
-                MessageBox.Show("No face detected. Please check your camera or stand closer.", "Training Fail", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("ບໍ່ສາມາດກວດພົບໃບຫນ່າ. ກະລຸນາກວດເບິ່ງກ້ອງຂອງທ່ານ ຫຼື ຍັບເຂົ້າມາໃກ້ກ້ອງຕື່ມ.", "ການເທຣນຂໍ້ມູນເກີດຂໍ້ຜິດພາດ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
             }
         }
 
