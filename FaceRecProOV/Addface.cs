@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -9,9 +8,10 @@ using Emgu.CV.CvEnum;
 using System.IO;
 using System.Diagnostics;
 
+
 namespace MultiFaceRec
 {
-    public partial class MainForm : Form
+    public partial class Addface : Form
     {
         //Declararation of all variables, vectors and haarcascades
         Image<Bgr, Byte> currentFrame;
@@ -26,13 +26,7 @@ namespace MultiFaceRec
         List<string> NamePersons = new List<string>();
         int ContTrain, NumLabels, t;
         string name, names = null;
-
-        private void imageBoxFrameGrabber_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        public MainForm()
+        public Addface()
         {
             InitializeComponent();
             //Load haarcascades for face detection
@@ -60,9 +54,7 @@ namespace MultiFaceRec
                 //MessageBox.Show(e.ToString());
                 MessageBox.Show("Nothing in binary database, please add face.", "Triained faces load", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -173,10 +165,9 @@ namespace MultiFaceRec
                     //Eigen face recognizer
                     EigenObjectRecognizer recognizer = new EigenObjectRecognizer(
                        trainingImages.ToArray(),
-                       labels.ToArray(),
+                    labels.ToArray(),
                        3000,
                        ref termCrit);
-
                     name = recognizer.Recognize(result);
 
                     //Draw the label for each face detected and recognized
@@ -209,5 +200,8 @@ namespace MultiFaceRec
             NamePersons.Clear();
         }
     }
-    
+
+}
+
+    }
 }

@@ -43,3 +43,4 @@ C:\Users\Sitth\source\computer vision\face_detection\FaceRecProOV\obj\x86\Debug\
 C:\Users\Sitth\source\computer vision\face_detection\FaceRecProOV\obj\x86\Debug\MultiFaceRec.csproj.CopyComplete
 C:\Users\Sitth\source\computer vision\face_detection\FaceRecProOV\obj\x86\Debug\MultiFaceRec.exe
 C:\Users\Sitth\source\computer vision\face_detection\FaceRecProOV\obj\x86\Debug\MultiFaceRec.pdb
+C:\Users\Sitth\source\computer vision\face_detection\FaceRecProOV\obj\x86\Debug\MultiFaceRec.Addface.resources
