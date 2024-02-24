@@ -32,6 +32,13 @@ namespace MultiFaceRec
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Addface mForm = new Addface();
+            mForm.Show();
+            this.Hide();
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
 
