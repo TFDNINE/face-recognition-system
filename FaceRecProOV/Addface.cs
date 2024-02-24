@@ -7,6 +7,7 @@ using Emgu.CV.Structure;
 using Emgu.CV.CvEnum;
 using System.IO;
 using System.Diagnostics;
+using System.Reflection.Emit;
 
 
 namespace MultiFaceRec
@@ -126,10 +127,11 @@ namespace MultiFaceRec
             }
         }
 
-
         void FrameGrabber(object sender, EventArgs e)
         {
-
+ 
+            //label4.Text = "";
+            NamePersons.Add("");
 
 
             //Get the current frame form capture device
@@ -147,6 +149,32 @@ namespace MultiFaceRec
           new Size(20, 20));
 
             //Action for each element detected
+            foreach (MCvAvgComp f in facesDetected[0])
+            {
+                t = t + 1;
+                result = currentFrame.Copy(f.rect).Convert<Gray, byte>().Resize(100, 100, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
+                //draw the face detected in the 0th (gray) channel with blue color
+                currentFrame.Draw(f.rect, new Bgr(Color.Green), 2);
+
+
+                if (trainingImages.ToArray().Length != 0)
+                {
+                    //TermCriteria for face recognition with numbers of trained images like maxIteration
+                    MCvTermCriteria termCrit = new MCvTermCriteria(ContTrain, 0.001);
+
+                    //Eigen face recognizer
+                    EigenObjectRecognizer recognizer = new EigenObjectRecognizer(
+                       trainingImages.ToArray(),
+                       labels.ToArray(),
+                       3000,
+                       ref termCrit);
+
+                    name = recognizer.Recognize(result);
+
+                    //Draw the label for each face detected and recognized
+                    //currentFrame.Draw(name, ref font, new Point(f.rect.X - 2, f.rect.Y - 2), new Bgr(Color.Red));
+
+                }
 
                 NamePersons[t - 1] = name;
                 NamePersons.Add("");
@@ -154,14 +182,24 @@ namespace MultiFaceRec
 
 
 
-            
 
 
+            }
+            t = 0;
 
+            //Names concatenation of persons recognized
+            for (int nnn = 0; nnn < facesDetected[0].Length; nnn++)
+            {
+                names = names + NamePersons[nnn] + ", ";
+            }
+            //Show the faces procesed and recognized
+            imageBoxFrameGrabber.Image = currentFrame;
+       
+            names = "";
+            //Clear the list(vector) of names
+            NamePersons.Clear();
         }
     }
 
 }
-
-    
 
