@@ -63,3 +63,4 @@ D:\C#\face-detect\FaceRecProOV\obj\x86\Debug\MultiFaceRec.pdb
 =======
 C:\Users\Sitth\source\computer vision\face_detection\FaceRecProOV\obj\x86\Debug\MultiFaceRec.Addface.resources
 >>>>>>> b2988a6ae99817a9b336c961f34084a4d578a239
+C:\Users\Sitth\source\computer vision\face_detection\FaceRecProOV\obj\x86\Debug\MultiFaceRec.Form2.resources
