@@ -33,17 +33,17 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.imageBox1 = new Emgu.CV.UI.ImageBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.imageBox1 = new Emgu.CV.UI.ImageBox();
             this.imageBoxFrameGrabber = new Emgu.CV.UI.ImageBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBoxFrameGrabber)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,17 +91,6 @@
             this.label1.Size = new System.Drawing.Size(50, 16);
             this.label1.TabIndex = 8;
             this.label1.Text = "Name: ";
-            // 
-            // imageBox1
-            // 
-            this.imageBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imageBox1.Location = new System.Drawing.Point(15, 22);
-            this.imageBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.imageBox1.Name = "imageBox1";
-            this.imageBox1.Size = new System.Drawing.Size(217, 164);
-            this.imageBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imageBox1.TabIndex = 5;
-            this.imageBox1.TabStop = false;
             // 
             // groupBox2
             // 
@@ -178,6 +167,17 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // imageBox1
+            // 
+            this.imageBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imageBox1.Location = new System.Drawing.Point(15, 22);
+            this.imageBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.imageBox1.Name = "imageBox1";
+            this.imageBox1.Size = new System.Drawing.Size(217, 164);
+            this.imageBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imageBox1.TabIndex = 5;
+            this.imageBox1.TabStop = false;
+            // 
             // imageBoxFrameGrabber
             // 
             this.imageBoxFrameGrabber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -202,9 +202,9 @@
             this.Text = "Camera Input & Face Detection";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBoxFrameGrabber)).EndInit();
             this.ResumeLayout(false);
 
