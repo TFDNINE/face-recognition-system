@@ -21,6 +21,7 @@ namespace MultiFaceRec
         public Signup()
         {
             InitializeComponent();
+            this.AcceptButton = signup_btn;
         }
 
         private void signup_loginHere_Click(object sender, EventArgs e)
@@ -40,7 +41,7 @@ namespace MultiFaceRec
             if (signup_email.Text == "" || signup_username.Text == ""
                 || signup_password.Text == "")
             {
-                MessageBox.Show("ກະລຸນາຕື່ມຂໍ້ມູນໃສ່ບ່ອນວ່າງ", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ກະລຸນາຕື່ມຂໍ້ມູນໃຫ້ຄົບຖ້ວນ", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -99,6 +100,15 @@ namespace MultiFaceRec
 
             }
         }
+        private void login_password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // โค้ดที่ต้องการให้ทำงานเมื่อกดปุ่ม Enter ใน textbox password
+                signup_loginHere_Click(sender, e); // เรียกใช้ event handler ของปุ่ม Login button
+            }
+        }
+
 
         private void signup_showPass_CheckedChanged(object sender, EventArgs e)
         {

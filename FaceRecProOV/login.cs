@@ -57,7 +57,7 @@ namespace MultiFaceRec
         {
             if (login_username.Text == "" || login_password.Text == "")
             {
-                MessageBox.Show("Please fil all blank fields", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ກະລຸນາຕື່ມຂໍ້ມູນໃຫ້ຄົບຖ້ວນ", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
