@@ -50,6 +50,8 @@
             // 
             // panel1
             // 
+            this.panel1.AutoSize = true;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.login_close);
             this.panel1.Controls.Add(this.login_registerHere);
@@ -62,11 +64,13 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel2);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel1.Location = new System.Drawing.Point(-24, -28);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(863, 518);
+            this.panel1.Size = new System.Drawing.Size(863, 538);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // login_close
             // 
@@ -85,40 +89,40 @@
             // 
             this.login_registerHere.AutoSize = true;
             this.login_registerHere.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.login_registerHere.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.login_registerHere.ForeColor = System.Drawing.Color.DimGray;
-            this.login_registerHere.Location = new System.Drawing.Point(660, 486);
+            this.login_registerHere.Font = new System.Drawing.Font("Noto Sans Lao", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_registerHere.ForeColor = System.Drawing.Color.Black;
+            this.login_registerHere.Location = new System.Drawing.Point(643, 476);
             this.login_registerHere.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.login_registerHere.Name = "login_registerHere";
-            this.login_registerHere.Size = new System.Drawing.Size(109, 18);
+            this.login_registerHere.Size = new System.Drawing.Size(79, 28);
             this.login_registerHere.TabIndex = 9;
-            this.login_registerHere.Text = "Register here";
+            this.login_registerHere.Text = "ລົງທະບຽນ";
             this.login_registerHere.Click += new System.EventHandler(this.login_registerHere_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Noto Sans Lao", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(472, 486);
+            this.label4.Location = new System.Drawing.Point(550, 476);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(163, 18);
+            this.label4.Size = new System.Drawing.Size(85, 28);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Don\'t have an account?";
+            this.label4.Text = "ຍັງບໍ່ມີບັນຊີ?";
             // 
             // login_showPass
             // 
             this.login_showPass.AutoSize = true;
             this.login_showPass.BackColor = System.Drawing.Color.Transparent;
-            this.login_showPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_showPass.Font = new System.Drawing.Font("Noto Sans Lao", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_showPass.ForeColor = System.Drawing.Color.Gray;
             this.login_showPass.Location = new System.Drawing.Point(675, 320);
             this.login_showPass.Margin = new System.Windows.Forms.Padding(4);
             this.login_showPass.Name = "login_showPass";
-            this.login_showPass.Size = new System.Drawing.Size(151, 24);
+            this.login_showPass.Size = new System.Drawing.Size(145, 32);
             this.login_showPass.TabIndex = 7;
-            this.login_showPass.Text = "Show Password";
+            this.login_showPass.Text = "ສະແດງລະຫັດຜ່ານ";
             this.login_showPass.UseVisualStyleBackColor = false;
             this.login_showPass.CheckedChanged += new System.EventHandler(this.login_showPass_CheckedChanged);
             // 
@@ -128,13 +132,14 @@
             this.login_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.login_btn.FlatAppearance.BorderSize = 0;
             this.login_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.login_btn.Font = new System.Drawing.Font("Noto Sans Lao", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_btn.ForeColor = System.Drawing.Color.White;
             this.login_btn.Location = new System.Drawing.Point(432, 351);
             this.login_btn.Margin = new System.Windows.Forms.Padding(4);
             this.login_btn.Name = "login_btn";
             this.login_btn.Size = new System.Drawing.Size(133, 43);
             this.login_btn.TabIndex = 6;
-            this.login_btn.Text = "LOGIN";
+            this.login_btn.Text = "ເຂົ້າສູ່ລະບົບ";
             this.login_btn.UseVisualStyleBackColor = false;
             this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
             // 
@@ -148,17 +153,18 @@
             this.login_password.PasswordChar = '*';
             this.login_password.Size = new System.Drawing.Size(405, 36);
             this.login_password.TabIndex = 5;
+            this.login_password.TextChanged += new System.EventHandler(this.login_password_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Noto Sans Lao", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(428, 252);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 20);
+            this.label3.Size = new System.Drawing.Size(85, 28);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Password:";
+            this.label3.Text = "ລະຫັດຜ່ານ:";
             // 
             // login_username
             // 
@@ -173,24 +179,24 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(428, 176);
+            this.label2.Font = new System.Drawing.Font("Noto Sans Lao", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(428, 167);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 20);
+            this.label2.Size = new System.Drawing.Size(54, 28);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Username:";
+            this.label2.Text = "ຊື່ຜູ້ໃຊ້:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(423, 92);
+            this.label1.Font = new System.Drawing.Font("MiSans Lao Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(562, 77);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 24);
+            this.label1.Size = new System.Drawing.Size(178, 41);
             this.label1.TabIndex = 1;
-            this.label1.Text = "ຍິນດີຕອນຮັບ";
+            this.label1.Text = "ຍິນດີຕ້ອນຮັບ";
             // 
             // panel2
             // 
@@ -205,11 +211,13 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(119, 85);
+            this.pictureBox1.Location = new System.Drawing.Point(116, 104);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(139, 128);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -218,7 +226,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.LightGray;
-            this.label6.Location = new System.Drawing.Point(41, 244);
+            this.label6.Location = new System.Drawing.Point(39, 256);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(313, 29);
@@ -240,12 +248,11 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label login_close;
         private System.Windows.Forms.Label login_registerHere;
         private System.Windows.Forms.Label label4;
@@ -259,5 +266,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
+        protected internal System.Windows.Forms.Panel panel1;
     }
 }

@@ -27,6 +27,14 @@ namespace MultiFaceRec
         List<string> NamePersons = new List<string>();
         int ContTrain, NumLabels, t;
         string name, names = null;
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MainForm mForm = new MainForm();
+            mForm.Show();
+            this.Hide();
+        }
+
         public Addface()
         {
             InitializeComponent();
@@ -53,7 +61,7 @@ namespace MultiFaceRec
             catch (Exception e)
             {
                 //MessageBox.Show(e.ToString());
-                MessageBox.Show("Nothing in binary database, please add face.", "Triained faces load", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //MessageBox.Show("Nothing in binary database, please add face.", "Triained faces load", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -74,7 +82,7 @@ namespace MultiFaceRec
             {
                 if (string.IsNullOrEmpty(textBox1.Text))
                 {
-                    MessageBox.Show("Please input your name to add face");
+                    MessageBox.Show("ກະລຸນາໃສ່ຊື່ ແລະ ນາມສະກຸນ");
                 }
                 else
                 {
@@ -118,12 +126,12 @@ namespace MultiFaceRec
                         File.AppendAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels.txt", labels.ToArray()[i - 1] + "%");
                     }
 
-                    MessageBox.Show(textBox1.Text + "´s face detected and added :)", "Training OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(textBox1.Text + " ໃບຫນ້າ ແລະ ຊື່ໄດ້ຖືກເພີ່ມແລ້ວ)", "Training OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch
             {
-                MessageBox.Show("No face detected. Please check your camera or stand closer.", "Training Fail", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("ບໍ່ພົບໃບໜ້າ. ກະລຸນາກວດເບິ່ງກ້ອງຂອງທ່ານ.", "Training Fail", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

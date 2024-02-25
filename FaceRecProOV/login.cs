@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace MultiFaceRec
 {
@@ -16,9 +18,16 @@ namespace MultiFaceRec
         public login()
         {
             InitializeComponent();
+            this.AcceptButton = login_btn;
         }
 
-        SqlConnection connect = new SqlConnection(@"Data Source=SITTHIPHONE\SQLEXPRESS;Initial Catalog=Login;Integrated Security=True");
+        //Database Connection
+        public static class DatabaseConnection
+        {
+            public static string ConnectionString { get; } = @"Data Source=SITTHIPHONE\SQLEXPRESS;Initial Catalog=Login;Integrated Security=True";
+        }
+
+        SqlConnection connect = new SqlConnection(DatabaseConnection.ConnectionString);
 
         private void login_registerHere_Click(object sender, EventArgs e)
         {
@@ -69,7 +78,7 @@ namespace MultiFaceRec
 
                             if (table.Rows.Count >= 1)
                             {
-                                MessageBox.Show("Logged In successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("ເຂົ້າສູ່ລະບົບສຳເລັດ", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                 MainForm mForm = new MainForm();
                                 mForm.Show();
@@ -77,7 +86,7 @@ namespace MultiFaceRec
                             }
                             else
                             {
-                                MessageBox.Show("Incorrect Username/Password", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("ຊື່ຜູ້ໃຊ້ ຫຼຶ ລະຫັດຜ່ານບໍ່ຖືກຕ້ອງ", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
@@ -92,6 +101,25 @@ namespace MultiFaceRec
                 }
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void login_password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void login_password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // โค้ดที่ต้องการให้ทำงานเมื่อกดปุ่ม Enter ใน textbox password
+                login_btn_Click(sender, e); // เรียกใช้ event handler ของปุ่ม Login button
+            }
+        }
+
     }
 }
 

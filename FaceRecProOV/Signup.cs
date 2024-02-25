@@ -9,14 +9,14 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static MultiFaceRec.login;
 
 namespace MultiFaceRec
 {
     public partial class Signup : Form
     {
 
-
-        SqlConnection connect = new SqlConnection(@"Data Source=SITTHIPHONE\SQLEXPRESS;Initial Catalog=Login;Integrated Security=True");
+        SqlConnection connect = new SqlConnection(DatabaseConnection.ConnectionString);
 
         public Signup()
         {
@@ -40,7 +40,7 @@ namespace MultiFaceRec
             if (signup_email.Text == "" || signup_username.Text == ""
                 || signup_password.Text == "")
             {
-                MessageBox.Show("Please fill all blank fields", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ກະລຸນາຕື່ມຂໍ້ມູນໃສ່ບ່ອນວ່າງ", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -77,7 +77,7 @@ namespace MultiFaceRec
 
                                     cmd.ExecuteNonQuery();
 
-                                    MessageBox.Show("Registered successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("ລົງທະບຽນສຳເລັດແລ້ວ", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                     // TO SWITCH THE FORM 
                                     login lForm = new login();

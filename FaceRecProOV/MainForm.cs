@@ -39,6 +39,11 @@ namespace MultiFaceRec
             this.Hide();
         }
 
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
 
@@ -70,7 +75,7 @@ namespace MultiFaceRec
             catch (Exception e)
             {
                 //MessageBox.Show(e.ToString());
-                MessageBox.Show("ບໍ່ພົບຫຍັງໃນຖານຂໍ້ມູນ, ກະລຸນາ ເພີ່ມໃບຫນ້າ.", "Triained faces load", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("ບໍ່ພົບຫຍັງໃນຖານຂໍ້ມູນ, ກະລຸນາເພີ່ມໃບຫນ້າ.", "Triained faces load", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
         }
@@ -131,7 +136,7 @@ namespace MultiFaceRec
                     name = recognizer.Recognize(result);
 
                     //Draw the label for each face detected and recognized
-                    currentFrame.Draw(name, ref font, new Point(f.rect.X - 2, f.rect.Y - 2), new Bgr(Color.Red));
+                    //currentFrame.Draw(name, ref font, new Point(f.rect.X - 2, f.rect.Y - 2), new Bgr(Color.Red));
 
                 }
 
@@ -148,7 +153,7 @@ namespace MultiFaceRec
             //Names concatenation of persons recognized
             for (int nnn = 0; nnn < facesDetected[0].Length; nnn++)
             {
-                names = names + NamePersons[nnn] + " ";
+                names = names + NamePersons[nnn] + " \n";
             }
             //Show the faces procesed and recognized
             imageBoxFrameGrabber.Image = currentFrame;
