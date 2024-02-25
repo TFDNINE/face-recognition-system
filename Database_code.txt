@@ -1,0 +1,10 @@
+Create database Login;
+use Login;
+
+create table admin(
+id int primary key IDENTITY(1,1),
+email varchar(max) ,
+username nvarchar(max),
+password nvarchar(max),
+date_created date,
+);
